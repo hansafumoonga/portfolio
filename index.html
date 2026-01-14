@@ -1,719 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Trigger GitHub Pages rebuild again -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Moonga Hansafu - IT Teacher & Design Specialist Portfolio">
     <title>Moonga Hansafu - Professional Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #1a56db;
-            --primary-light: #3b82f6;
-            --secondary: #059669;
-            --accent: #f97316;
-            --navy: #1e3a8a;
-            --dark: #1f2937;
-            --gray: #6b7280;
-            --gray-light: #f3f4f6;
-            --white: #ffffff;
-            --border: #e5e7eb;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            color: var(--dark);
-            overflow-x: hidden;
-            background: var(--white);
-            line-height: 1.6;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Navigation */
-        .navbar {
-            background: var(--white) !important;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--navy) !important;
-        }
-
-        .nav-link {
-            color: var(--dark) !important;
-            font-weight: 500;
-            margin: 0 0.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 80%;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary) !important;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            min-height: 100vh;
-            background: linear-gradient(to bottom, var(--white) 0%, var(--gray-light) 100%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .profile-photo-container {
-            position: relative;
-            width: 260px;
-            height: 260px;
-            margin: 0 auto 2rem;
-        }
-
-        .profile-photo {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid var(--white);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .hero-section h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
-        .hero-section .subtitle {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .hero-section .tagline {
-            font-size: 1.1rem;
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-
-        /* Buttons */
-        .btn-primary-custom {
-            background: var(--primary);
-            border: none;
-            padding: 14px 36px;
-            font-weight: 600;
-            border-radius: 8px;
-            color: var(--white);
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(26, 86, 219, 0.3);
-        }
-
-        .btn-primary-custom:hover {
-            background: var(--navy);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(26, 86, 219, 0.4);
-            color: var(--white);
-        }
-
-        .btn-outline-custom {
-            border: 2px solid var(--primary);
-            padding: 12px 34px;
-            font-weight: 600;
-            border-radius: 8px;
-            color: var(--primary);
-            background: transparent;
-            transition: all 0.3s ease;
-        }
-
-        .btn-outline-custom:hover {
-            background: var(--primary);
-            color: var(--white);
-            transform: translateY(-2px);
-        }
-
-        /* Works Button */
-        .works-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: var(--primary);
-            border: none;
-            padding: 14px 36px;
-            font-weight: 600;
-            border-radius: 8px;
-            color: var(--white);
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(26, 86, 219, 0.3);
-            text-decoration: none;
-            margin-top: 20px;
-        }
-
-        .works-btn:hover {
-            background: var(--navy);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(26, 86, 219, 0.4);
-            color: var(--white);
-            text-decoration: none;
-        }
-
-        .works-btn i {
-            font-size: 18px;
-        }
-
-        .works-section {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--navy);
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--gray);
-            margin-bottom: 3rem;
-        }
-
-        /* Platform Cards */
-        .platform-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 2px solid var(--border);
-            height: 100%;
-        }
-
-        .platform-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        .platform-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
-            color: var(--white);
-            transition: all 0.3s ease;
-        }
-
-        .platform-card:hover .platform-icon {
-            background: var(--navy);
-            transform: scale(1.05);
-        }
-
-        .platform-card h5 {
-            color: var(--navy);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        /* Feature Cards */
-        .feature-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 2.5rem;
-            height: 100%;
-            transition: all 0.3s ease;
-            border: 2px solid var(--border);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary-light);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            color: var(--white);
-        }
-
-        .feature-card h4 {
-            color: var(--navy);
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            background: var(--navy);
-            color: var(--white);
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--white);
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            font-weight: 500;
-        }
-
-        /* Portfolio Grid */
-        .portfolio-item {
-            position: relative;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 2rem;
-            border: 2px solid var(--border);
-            transition: all 0.3s ease;
-            background: var(--white);
-            cursor: pointer;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-            border-color: var(--primary);
-        }
-
-        .portfolio-img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .portfolio-item:hover .portfolio-img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(26, 86, 219, 0.95);
-            opacity: 0;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 2rem;
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-overlay h4 {
-            color: var(--white);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .portfolio-overlay p {
-            color: rgba(255, 255, 255, 0.95);
-            text-align: center;
-        }
-
-        /* Business Card */
-        .business-card {
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 12px;
-            padding: 3rem;
-            height: 100%;
-        }
-
-        .business-card h2 {
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        .business-card .lead {
-            opacity: 0.95;
-        }
-
-        .business-card p {
-            opacity: 0.9;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: var(--gray-light);
-        }
-
-        .contact-card {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 3rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border: 2px solid var(--border);
-        }
-
-        .contact-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1.5rem;
-            background: var(--gray-light);
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border);
-        }
-
-        .contact-info:hover {
-            transform: translateX(10px);
-            border-color: var(--primary);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .contact-info h5 {
-            color: var(--navy);
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--navy);
-            color: var(--white);
-            padding: 3rem 0 2rem;
-        }
-
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            margin: 0 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-
-            .profile-photo-container {
-                width: 200px;
-                height: 200px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            section {
-                padding: 60px 0;
-            }
-
-            /* FIX: Add spacing between hero buttons in mobile */
-            .hero-section .btn {
-                margin-bottom: 15px;
-                display: block;
-                width: 100%;
-            }
-            
-            .hero-section .btn-primary-custom.me-3 {
-                margin-right: 0 !important;
-            }
-
-            /* FIX: Fix email overflow and contact button spacing */
-            .contact-info p {
-                word-break: break-all;
-                overflow-wrap: break-word;
-            }
-            
-            .contact-card .btn {
-                margin-bottom: 10px;
-                display: block;
-                width: 100%;
-            }
-            
-            .contact-card .btn-primary-custom.me-3 {
-                margin-right: 0 !important;
-            }
-        }
-
-        /* Additional Professional Styling */
-        .bg-light {
-            background: var(--gray-light) !important;
-        }
-
-        .text-muted {
-            color: var(--gray) !important;
-        }
-
-        .list-unstyled li {
-            padding: 0.5rem 0;
-        }
-
-        .badge {
-            background: var(--accent);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-weight: 600;
-        }
-
-        /* Image Lightbox/Popup */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            animation: zoomIn 0.3s ease;
-        }
-
-        .lightbox-img {
-            width: 100%;
-            height: auto;
-            max-height: 80vh;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: var(--primary);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .lightbox-close:hover {
-            background: var(--navy);
-            transform: scale(1.1);
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-
-        .lightbox-nav:hover {
-            background: var(--primary);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .lightbox-prev {
-            left: 20px;
-        }
-
-        .lightbox-next {
-            right: 20px;
-        }
-
-        .lightbox-info {
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            color: white;
-            padding: 10px;
-        }
-
-        .lightbox-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .lightbox-desc {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        /* Make images clickable */
-        .clickable-image {
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .clickable-image:hover {
-            transform: scale(1.02);
-        }
-    </style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -725,21 +19,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#platforms">Platforms</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mywork.html">My Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#platforms">Platforms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mywork.html">My Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -751,15 +35,13 @@
             <div class="row align-items-center">
                 <div class="col-lg-12 text-center hero-content">
                     <div class="profile-photo-container fade-in">
-                        <img src="images/profile.jpg" 
-                             alt="Moonga Hansafu" 
-                             class="profile-photo">
+                        <img src="images/profile.jpg" alt="Moonga Hansafu" class="profile-photo">
                     </div>
                     <h1 class="fade-in">Moonga Hansafu</h1>
                     <p class="subtitle fade-in">IT Teacher & Design Specialist</p>
                     <p class="tagline fade-in">Transforming education through technology and creating innovative digital solutions</p>
                     <div class="fade-in mt-4">
-                        <a href="#work" class="btn btn-primary-custom me-3">View My Work</a>
+                        <a href="#work" class="btn btn-primary-custom me-md-3 mb-3 mb-md-0">View My Work</a>
                         <a href="#contact" class="btn btn-outline-custom">Get In Touch</a>
                     </div>
                 </div>
@@ -774,41 +56,29 @@
                 <div class="col-lg-10 text-center fade-in">
                     <h2 class="section-title">About Me</h2>
                     <p class="section-subtitle">Passionate about technology and education</p>
-                    <p class="lead mb-4">
-                        I am a dedicated IT professional with expertise in Teaching,  educational technology platforms, 
-                        system administration, and creative design. Currently pursuing my Master of Information 
-                        Technology at the University of Zambia (UNZA), I combine technical skills with creative 
-                        thinking to deliver innovative solutions that make a real impact.
-                    </p>
+                    <p class="lead mb-4">I am a dedicated IT professional with expertise in Teaching, educational technology platforms, system administration, and creative design. Currently pursuing my Master of Information Technology at the University of Zambia (UNZA), I combine technical skills with creative thinking to deliver innovative solutions.</p>
                 </div>
             </div>
-
             <div class="row g-4 mt-4">
                 <div class="col-md-4 fade-in">
                     <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
+                        <div class="feature-icon mx-auto"><i class="fas fa-graduation-cap"></i></div>
                         <h4>Education</h4>
-                        <p class="text-muted">Bachelor's Degree in Mathematics and ICT with Education from Mulungushi University, Currently Master's Student in IT at UNZA, continuously expanding my knowledge in emerging technologies</p>
+                        <p class="text-muted">Bachelor's in Mathematics & ICT from Mulungushi University. Master's student in IT at UNZA.</p>
                     </div>
                 </div>
                 <div class="col-md-4 fade-in">
                     <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
+                        <div class="feature-icon mx-auto"><i class="fas fa-laptop-code"></i></div>
                         <h4>Technical Skills</h4>
-                        <p class="text-muted">Expert in Educational system administration, platform management, and Cpanel</p>
+                        <p class="text-muted">Expert in educational system administration, platform management, and cPanel.</p>
                     </div>
                 </div>
                 <div class="col-md-4 fade-in">
                     <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto">
-                            <i class="fas fa-palette"></i>
-                        </div>
+                        <div class="feature-icon mx-auto"><i class="fas fa-palette"></i></div>
                         <h4>Creative Design</h4>
-                        <p class="text-muted">Skilled in graphic design in Canva and Video editing Premiere Pro and iMovie</p>
+                        <p class="text-muted">Skilled in Canva, Premiere Pro, and iMovie for impactful visual content.</p>
                     </div>
                 </div>
             </div>
@@ -857,45 +127,37 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
+                        <div class="platform-icon"><i class="fas fa-laptop-code"></i></div>
                         <h5>Jamf</h5>
-                        <p class="text-muted">Apple device management and security solutions for education</p>
+                        <p class="text-muted">Apple device management for education</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
+                        <div class="platform-icon"><i class="fas fa-shield-alt"></i></div>
                         <h5>Securly</h5>
-                        <p class="text-muted">Student safety and wellness monitoring platform</p>
+                        <p class="text-muted">Student safety monitoring platform</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon">
-                            <i class="fab fa-microsoft"></i>
-                        </div>
+                        <div class="platform-icon"><i class="fab fa-microsoft"></i></div>
                         <h5>Microsoft 365</h5>
-                        <p class="text-muted">User creation, password resets, and cloud administration</p>
+                        <p class="text-muted">Cloud administration & user management</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
+                        <div class="platform-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                         <h5>Seesaw</h5>
-                        <p class="text-muted">Student-driven digital portfolios and classroom engagement</p>
+                        <p class="text-muted">Digital portfolios & engagement</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Work Section Preview -->
+    <!-- Featured Work -->
     <section id="work" class="bg-light">
         <div class="container">
             <div class="text-center mb-5 fade-in">
@@ -903,12 +165,9 @@
                 <p class="section-subtitle">A selection of my recent projects</p>
             </div>
             <div class="row g-4">
-                <!-- Logo Design -->
                 <div class="col-md-4 fade-in">
-                    <div class="portfolio-item" data-image="images/posters/QDZ.png" 
-                         data-title="QuickDocs Zambia Logo" 
-                         data-description="Professional logo design featuring document and business elements">
-                        <img src="images/posters/QDZ.png" alt="QuickDocs Zambia Logo" class="portfolio-img">
+                    <div class="portfolio-item" data-image="images/posters/QDZ.png" data-title="QuickDocs Zambia Logo" data-description="Professional logo design">
+                        <img src="images/posters/QDZ.png" alt="QuickDocs Logo" class="portfolio-img">
                         <div class="portfolio-overlay">
                             <h4>QuickDocs Zambia Logo</h4>
                             <p>Click to view full size</p>
@@ -916,12 +175,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- Poster Design -->
                 <div class="col-md-4 fade-in">
-                    <div class="portfolio-item" data-image="images/posters/Tennis.jpg" 
-                         data-title="Tennis Tournament Poster" 
-                         data-description="Creative poster design for sports event promotion">
-                        <img src="images/posters/Tennis.jpg" alt="Tennis Tournament Poster" class="portfolio-img">
+                    <div class="portfolio-item" data-image="images/posters/Tennis.jpg" data-title="Tennis Tournament Poster" data-description="Sports event promotion">
+                        <img src="images/posters/Tennis.jpg" alt="Tennis Poster" class="portfolio-img">
                         <div class="portfolio-overlay">
                             <h4>Tennis Tournament Poster</h4>
                             <p>Click to view full size</p>
@@ -929,12 +185,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- CV Design -->
                 <div class="col-md-4 fade-in">
-                    <div class="portfolio-item" data-image="images/posters/cv1.jpg" 
-                         data-title="Professional CV Design" 
-                         data-description="Modern resume template for corporate professionals">
-                        <img src="images/posters/cv1.jpg" alt="Professional CV Design" class="portfolio-img">
+                    <div class="portfolio-item" data-image="images/posters/cv1.jpg" data-title="Professional CV Design" data-description="Modern resume template">
+                        <img src="images/posters/cv1.jpg" alt="CV Design" class="portfolio-img">
                         <div class="portfolio-overlay">
                             <h4>Professional CV Design</h4>
                             <p>Click to view full size</p>
@@ -943,12 +196,8 @@
                     </div>
                 </div>
             </div>
-            
-            <!-- View More Works Button -->
-            <div class="works-section fade-in">
-                <a href="mywork.html" class="works-btn">
-                    <i class="fas fa-eye"></i> View More Works
-                </a>
+            <div class="text-center mt-5 fade-in">
+                <a href="mywork.html" class="btn btn-primary-custom"><i class="fas fa-eye me-2"></i>View More Works</a>
             </div>
         </div>
     </section>
@@ -956,29 +205,25 @@
     <!-- Business Venture -->
     <section>
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-center g-4">
                 <div class="col-lg-6 fade-in">
                     <h2 class="section-title">QuickDocs Zambia</h2>
                     <p class="lead mb-3" style="color: var(--primary); font-weight: 600;">Founder & CEO</p>
-                    <p class="text-muted mb-4">
-                        QuickDocs Zambia provides efficient document solutions and business services 
-                        tailored to local needs. We specialize in document preparation, business 
-                        registration, and administrative support services.
-                    </p>
+                    <p class="text-muted mb-4">QuickDocs Zambia provides efficient document solutions and business services tailored to local needs.</p>
                     <div class="mt-4">
                         <p class="mb-2"><strong><i class="fas fa-phone me-2" style="color: var(--primary);"></i>Phone:</strong> +260 978784785</p>
                         <p class="mb-2"><strong><i class="fas fa-envelope me-2" style="color: var(--primary);"></i>Email:</strong> quickdocszambia@gmail.com</p>
-                        <p class="mb-2"><strong><i class="fa fa-facebook me-2" style="color: var(--primary);"></i>Facebook:</strong> QuickDocs Zambia</p>
+                        <p class="mb-2"><strong><i class="fab fa-facebook me-2" style="color: var(--primary);"></i>Facebook:</strong> QuickDocs Zambia</p>
                     </div>
                 </div>
                 <div class="col-lg-6 fade-in">
                     <div class="feature-card">
                         <h4 class="mb-4">Our Services</h4>
                         <ul class="list-unstyled">
-                            <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--secondary);"></i> Document Processing</li>
-                            <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--secondary);"></i> Business Registration</li>
-                            <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--secondary);"></i> Administrative Support</li>
-                            <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--secondary);"></i> Consultation Services</li>
+                            <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--secondary);"></i>Document Processing</li>
+                            <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--secondary);"></i>Business Registration</li>
+                            <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--secondary);"></i>Administrative Support</li>
+                            <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--secondary);"></i>Consultation Services</li>
                         </ul>
                     </div>
                 </div>
@@ -997,39 +242,29 @@
                     </div>
                     <div class="contact-card">
                         <div class="contact-info">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                             <div>
                                 <h5>Email</h5>
                                 <p class="mb-0 text-muted">hansafumoonga@gmail.com</p>
                             </div>
                         </div>
                         <div class="contact-info">
-                            <div class="contact-icon">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
+                            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
                             <div>
                                 <h5>WhatsApp</h5>
                                 <p class="mb-0 text-muted">+260 978784785</p>
                             </div>
                         </div>
                         <div class="contact-info">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div>
                                 <h5>Location</h5>
                                 <p class="mb-0 text-muted">Lusaka, Zambia</p>
                             </div>
                         </div>
                         <div class="text-center mt-4">
-                            <a href="mailto:hansafumoonga@gmail.com" class="btn btn-primary-custom me-3">
-                                <i class="fas fa-envelope me-2"></i>Send Email
-                            </a>
-                            <a href="https://wa.me/260978784785" class="btn btn-outline-custom" target="_blank">
-                                <i class="fab fa-whatsapp me-2"></i>WhatsApp
-                            </a>
+                            <a href="mailto:hansafumoonga@gmail.com" class="btn btn-primary-custom me-md-3 mb-3 mb-md-0"><i class="fas fa-envelope me-2"></i>Send Email</a>
+                            <a href="https://wa.me/260978784785" class="btn btn-outline-custom" target="_blank"><i class="fab fa-whatsapp me-2"></i>WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -1043,11 +278,11 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="social-links mb-4">
-                        <a href="https://www.linkedin.com/in/moonga-hansafu-946077187" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61584311491572" aria-label="Facebook" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://wa.me/260978784785" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/in/moonga-hansafu-946077187" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61584311491572" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/260978784785" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                     <p class="mb-0">&copy; 2026 Moonga Hansafu. All rights reserved.</p>
                 </div>
@@ -1055,17 +290,11 @@
         </div>
     </footer>
 
-    <!-- Image Lightbox -->
+    <!-- Lightbox -->
     <div class="lightbox" id="imageLightbox">
-        <button class="lightbox-close" id="lightboxClose">
-            <i class="fas fa-times"></i>
-        </button>
-        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <button class="lightbox-nav lightbox-next" id="lightboxNext">
-            <i class="fas fa-chevron-right"></i>
-        </button>
+        <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
         <div class="lightbox-content">
             <img id="lightboxImage" class="lightbox-img" src="" alt="">
             <div class="lightbox-info">
@@ -1075,169 +304,7 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offset = 80;
-                    const targetPosition = target.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Update active nav link on scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Add stagger effect to cards
-        document.querySelectorAll('.row').forEach(row => {
-            const cards = row.querySelectorAll('.fade-in');
-            cards.forEach((card, index) => {
-                card.style.transitionDelay = `${index * 0.1}s`;
-            });
-        });
-
-        // Image Lightbox functionality
-        const lightbox = document.getElementById('imageLightbox');
-        const lightboxImage = document.getElementById('lightboxImage');
-        const lightboxTitle = document.getElementById('lightboxTitle');
-        const lightboxDesc = document.getElementById('lightboxDesc');
-        const lightboxClose = document.getElementById('lightboxClose');
-        const lightboxPrev = document.getElementById('lightboxPrev');
-        const lightboxNext = document.getElementById('lightboxNext');
-
-        let currentImages = [];
-        let currentIndex = 0;
-
-        // Get all portfolio items for lightbox
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-        portfolioItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                const imageSrc = item.getAttribute('data-image');
-                const title = item.getAttribute('data-title');
-                const description = item.getAttribute('data-description');
-                
-                // Set current images array for navigation
-                currentImages = Array.from(portfolioItems).map(p => ({
-                    src: p.getAttribute('data-image'),
-                    title: p.getAttribute('data-title'),
-                    desc: p.getAttribute('data-description')
-                }));
-                
-                currentIndex = index;
-                openLightbox(imageSrc, title, description);
-            });
-        });
-
-        function openLightbox(src, title, description) {
-            lightboxImage.src = src;
-            lightboxTitle.textContent = title;
-            lightboxDesc.textContent = description;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
-        }
-
-        function navigateLightbox(direction) {
-            if (currentImages.length === 0) return;
-            
-            currentIndex += direction;
-            
-            // Loop around
-            if (currentIndex < 0) {
-                currentIndex = currentImages.length - 1;
-            } else if (currentIndex >= currentImages.length) {
-                currentIndex = 0;
-            }
-            
-            const image = currentImages[currentIndex];
-            openLightbox(image.src, image.title, image.desc);
-        }
-
-        // Event listeners
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
-        lightboxNext.addEventListener('click', () => navigateLightbox(1));
-
-        // Close lightbox on ESC key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            } else if (e.key === 'ArrowLeft') {
-                navigateLightbox(-1);
-            } else if (e.key === 'ArrowRight') {
-                navigateLightbox(1);
-            }
-        });
-
-        // Close lightbox when clicking outside image
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
