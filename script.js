@@ -51,7 +51,6 @@ window.addEventListener('scroll', function() {
     let current = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         if (window.scrollY >= (sectionTop - 100)) {
             current = section.getAttribute('id');
         }
@@ -62,14 +61,6 @@ window.addEventListener('scroll', function() {
         if (link.getAttribute('href') === '#' + current) {
             link.classList.add('active');
         }
-    });
-});
-
-// Add stagger effect to cards
-document.querySelectorAll('.row').forEach(row => {
-    const cards = row.querySelectorAll('.fade-in');
-    cards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 0.1}s`;
     });
 });
 
@@ -87,15 +78,19 @@ let currentIndex = 0;
 
 // Get all portfolio items for lightbox
 const portfolioItems = document.querySelectorAll('.portfolio-item');
+const workItems = document.querySelectorAll('.work-item');
 
-portfolioItems.forEach((item, index) => {
+// Combine both portfolio and work items
+const allItems = [...portfolioItems, ...workItems];
+
+allItems.forEach((item, index) => {
     item.addEventListener('click', () => {
         const imageSrc = item.getAttribute('data-image');
         const title = item.getAttribute('data-title');
         const description = item.getAttribute('data-description');
         
         // Set current images array for navigation
-        currentImages = Array.from(portfolioItems).map(p => ({
+        currentImages = Array.from(allItems).map(p => ({
             src: p.getAttribute('data-image'),
             title: p.getAttribute('data-title'),
             desc: p.getAttribute('data-description')
@@ -107,6 +102,8 @@ portfolioItems.forEach((item, index) => {
 });
 
 function openLightbox(src, title, description) {
+    if (!lightbox || !lightboxImage) return;
+    
     lightboxImage.src = src;
     lightboxTitle.textContent = title;
     lightboxDesc.textContent = description;
@@ -115,6 +112,8 @@ function openLightbox(src, title, description) {
 }
 
 function closeLightbox() {
+    if (!lightbox) return;
+    
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
 }
@@ -134,10 +133,18 @@ function navigateLightbox(direction) {
     openLightbox(image.src, image.title, image.desc);
 }
 
-// Event listeners
-lightboxClose.addEventListener('click', closeLightbox);
-lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
-lightboxNext.addEventListener('click', () => navigateLightbox(1));
+// Event listeners for lightbox
+if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (lightboxPrev) {
+    lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+}
+
+if (lightboxNext) {
+    lightboxNext.addEventListener('click', () => navigateLightbox(1));
+}
 
 // Close lightbox on ESC key
 document.addEventListener('keydown', (e) => {
@@ -151,8 +158,18 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Close lightbox when clicking outside image
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        closeLightbox();
-    }
+if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+}
+
+// Add stagger effect to items
+document.querySelectorAll('.row, .portfolio-grid, .work-grid').forEach(container => {
+    const items = container.querySelectorAll('.fade-in');
+    items.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+    });
 });

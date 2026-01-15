@@ -6,474 +6,7 @@
     <title>My Works | Moonga Hansafu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #1a56db;
-            --primary-light: #3b82f6;
-            --secondary: #059669;
-            --accent: #f97316;
-            --navy: #1e3a8a;
-            --dark: #1f2937;
-            --gray: #6b7280;
-            --gray-light: #f3f4f6;
-            --white: #ffffff;
-            --border: #e5e7eb;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            color: var(--dark);
-            overflow-x: hidden;
-            background: var(--white);
-            line-height: 1.6;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Navigation */
-        .navbar {
-            background: var(--white) !important;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--navy) !important;
-        }
-
-        .nav-link {
-            color: var(--dark) !important;
-            font-weight: 500;
-            margin: 0 0.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 80%;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary) !important;
-        }
-
-        /* Hero Section for Works Page */
-        .works-hero {
-            background: linear-gradient(to bottom, var(--white) 0%, var(--gray-light) 100%);
-            padding: 140px 0 80px;
-            text-align: center;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--navy);
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--gray);
-            margin-bottom: 3rem;
-        }
-
-        /* Works Categories */
-        .work-category {
-            margin-bottom: 60px;
-        }
-
-        .category-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--primary);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-            color: var(--white);
-        }
-
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .work-item {
-            border-radius: 12px;
-            overflow: hidden;
-            border: 2px solid var(--border);
-            transition: all 0.3s ease;
-            background: var(--white);
-            cursor: pointer;
-        }
-
-        .work-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-            border-color: var(--primary);
-        }
-
-        .work-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .work-item:hover .work-img {
-            transform: scale(1.05);
-        }
-
-        .work-info {
-            padding: 20px;
-        }
-
-        .work-info h5 {
-            color: var(--navy);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .work-info p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        .work-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(26, 86, 219, 0.9);
-            opacity: 0;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .work-item:hover .work-overlay {
-            opacity: 1;
-        }
-
-        .work-overlay h5 {
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .work-overlay i {
-            font-size: 24px;
-            margin-top: 10px;
-        }
-
-        /* Buttons */
-        .works-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: var(--primary);
-            border: none;
-            padding: 14px 36px;
-            font-weight: 600;
-            border-radius: 8px;
-            color: var(--white);
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(26, 86, 219, 0.3);
-            text-decoration: none;
-            margin-top: 20px;
-        }
-
-        .works-btn:hover {
-            background: var(--navy);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(26, 86, 219, 0.4);
-            color: var(--white);
-            text-decoration: none;
-        }
-
-        .works-btn i {
-            font-size: 18px;
-        }
-
-        .works-btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .works-btn-outline:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .back-home {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 30px;
-        }
-
-        .back-home:hover {
-            color: var(--navy);
-            text-decoration: none;
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--navy);
-            color: var(--white);
-            padding: 3rem 0 2rem;
-        }
-
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            margin: 0 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-5px);
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Image Lightbox/Popup */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-            animation: zoomIn 0.3s ease;
-        }
-
-        .lightbox-img {
-            width: 100%;
-            height: auto;
-            max-height: 80vh;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: var(--primary);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .lightbox-close:hover {
-            background: var(--navy);
-            transform: scale(1.1);
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
-
-        .lightbox-nav:hover {
-            background: var(--primary);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .lightbox-prev {
-            left: 20px;
-        }
-
-        .lightbox-next {
-            right: 20px;
-        }
-
-        .lightbox-info {
-            position: absolute;
-            bottom: -50px;
-            left: 0;
-            right: 0;
-            text-align: center;
-            color: white;
-            padding: 10px;
-        }
-
-        .lightbox-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .lightbox-desc {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .works-hero h1 {
-                font-size: 2.5rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            section {
-                padding: 60px 0;
-            }
-            .work-grid {
-                grid-template-columns: 1fr;
-            }
-            .lightbox-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
-            }
-            .lightbox-prev {
-                left: 10px;
-            }
-            .lightbox-next {
-                right: 10px;
-            }
-        }
-
-        .bg-light {
-            background: var(--gray-light) !important;
-        }
-
-        .text-muted {
-            color: var(--gray) !important;
-        }
-    </style>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -492,7 +25,7 @@
                         <a class="nav-link" href="index.html#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#platforms">Platforms</a>
+                        <a class="nav-link" href="index.html#platforms">Technologies</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="mywork.html">My Works</a>
@@ -538,11 +71,13 @@
                      data-image="images/posters/QDZ.png" 
                      data-title="QuickDocs Zambia Logo" 
                      data-description="Professional logo design featuring document and business elements">
-                    <img src="images/posters/QDZ.png" alt="QuickDocs Zambia Logo" class="work-img">
-                    <div class="work-overlay">
-                        <h5>QuickDocs Zambia Logo</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/QDZ.png" alt="QuickDocs Zambia Logo" class="work-img">
+                        <div class="work-overlay">
+                            <h5>QuickDocs Zambia Logo</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>QuickDocs Zambia Logo</h5>
@@ -553,17 +88,19 @@
                 <!-- Logo 2 -->
                 <div class="work-item fade-in" 
                      data-image="images/posters/logo.png" 
-                     data-title="Education Brand Logo" 
-                     data-description="Modern logo for an educational technology startup">
-                    <img src="images/posters/logo.png" alt="Education Brand Logo" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Education Brand Logo</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                     data-title="Business startup Logo" 
+                     data-description="Modern logo for a business startup">
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/logo.png" alt="Education Brand Logo" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Modern logo for businesses</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Business Logo</h5>
-                        <p>Modern logo for a startup business startup</p>
+                        <p>Modern logo for a startup business</p>
                         <small class="text-muted">Canva Design</small>
                     </div>
                 </div>
@@ -572,11 +109,13 @@
                      data-image="images/posters/certificate.png" 
                      data-title="Creative Agency Logo" 
                      data-description="Abstract logo representing creativity and innovation">
-                    <img src="images/posters/certificate.png" alt="Creative Agency Logo" class="work-img">
-                    <div class="work-overlay">
-                        <h5>certificate</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/certificate.png" alt="Creative Agency Logo" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Certificate</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Creative Modern Certificate</h5>
@@ -589,11 +128,13 @@
                      data-image="images/posters/Certificate1.jpg" 
                      data-title="Tech Startup Logo" 
                      data-description="Futuristic logo for a technology startup company">
-                    <img src="images/posters/Certificate1.jpg" alt="Tech Startup Logo" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Certificate</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/Certificate1.jpg" alt="Tech Startup Logo" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Certificate</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Certificate</h5>
@@ -605,26 +146,29 @@
         </div>
     </section>
 
+    <!-- Projects in Progress -->
     <section class="work-category bg-light">
         <div class="container">
             <div class="text-center mb-5 fade-in">
                 <div class="category-icon">
-                    <i class="fas fa-images"></i>
+                    <i class="fas fa-code"></i>
                 </div>
-                <h2 class="section-title">Projects in progress</h2>
-                <p class="section-subtitle">A savings project using HTML,CSS,JS and Laravel & POS Mobile app using Python KivyMD</p>
+                <h2 class="section-title">Projects in Progress</h2>
+                <p class="section-subtitle">A savings project using HTML, CSS, JS and Laravel & POS Mobile app using Python KivyMD</p>
             </div>
             <div class="work-grid">
-                <!-- Poster 1 -->
+                <!-- Project 1 -->
                 <div class="work-item fade-in" 
                      data-image="images/posters/login.png" 
                      data-title="POS Mobile App Login" 
                      data-description="Mobile app login screen design">
-                    <img src="images/posters/login.png" alt="POS Mobile App Login" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Login Screen</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/login.png" alt="POS Mobile App Login" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Login Screen</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>POS Mobile App</h5>
@@ -632,50 +176,56 @@
                         <small class="text-muted">Python APP</small>
                     </div>
                 </div>
-                <!-- Poster 2 -->
+                <!-- Project 2 -->
                 <div class="work-item fade-in" 
                      data-image="images/posters/dashboard.png" 
                      data-title="POS Mobile App Dashboard" 
                      data-description="Mobile app dashboard interface">
-                    <img src="images/posters/dashboard.png" alt="POS Mobile App Dashboard" class="work-img">
-                    <div class="work-overlay">
-                        <h5>POS Mobile App</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/dashboard.png" alt="POS Mobile App Dashboard" class="work-img">
+                        <div class="work-overlay">
+                            <h5>POS Mobile App</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
-                        <h5>POS Mobile App dashboard</h5>
+                        <h5>POS Mobile App Dashboard</h5>
                         <p>POS Mobile App dashboard after login</p>
                         <small class="text-muted">Python App</small>
                     </div>
                 </div>
-                <!-- Poster 3 -->
+                <!-- Project 3 -->
                 <div class="work-item fade-in" 
                      data-image="images/posters/sav2.png" 
                      data-title="Savings App Login" 
                      data-description="Web app login interface">
-                    <img src="images/posters/sav2.png" alt="Savings App Login" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Savings App</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/sav2.png" alt="Savings App Login" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Savings App</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Saving App Login</h5>
-                        <p>Still in progress the system is built using HTML, CSS, JavaScript, Laravel and MySQL DB</p>
+                        <p>Still in progress, the system is built using HTML, CSS, JavaScript, Laravel and MySQL DB</p>
                         <small class="text-muted">Web App</small>
                     </div>
                 </div>
-                <!-- Poster 4 -->
+                <!-- Project 4 -->
                 <div class="work-item fade-in" 
                      data-image="images/posters/sav1.png" 
                      data-title="Savings App Dashboard" 
                      data-description="Web app admin dashboard">
-                    <img src="images/posters/sav1.png" alt="Savings App Dashboard" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Saving App</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/sav1.png" alt="Savings App Dashboard" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Saving App</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Savings App</h5>
@@ -703,11 +253,13 @@
                      data-image="images/posters/Tennis.jpg" 
                      data-title="Tennis Tournament Poster" 
                      data-description="Sports event promotion poster design">
-                    <img src="images/posters/Tennis.jpg" alt="Tennis Tournament Poster" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Tennis Tournament Poster</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/Tennis.jpg" alt="Tennis Tournament Poster" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Tennis Tournament Poster</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Tennis Tournament Poster</h5>
@@ -720,11 +272,13 @@
                      data-image="images/posters/Conference.png" 
                      data-title="Education Conference Poster" 
                      data-description="Colorful poster promoting educational conference">
-                    <img src="images/posters/Conference.png" alt="Education Conference Poster" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Education Conference Poster</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/Conference.png" alt="Education Conference Poster" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Education Conference Poster</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Education Innovation Conference</h5>
@@ -737,11 +291,13 @@
                      data-image="images/posters/Modern.jpg" 
                      data-title="Business Price Poster" 
                      data-description="Colorful modern poster displaying prices">
-                    <img src="images/posters/Modern.jpg" alt="Business Price Poster" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Business Poster</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/Modern.jpg" alt="Business Price Poster" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Business Poster</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Business Price Poster</h5>
@@ -754,11 +310,13 @@
                      data-image="images/posters/tennis.png" 
                      data-title="Tennis Event Poster" 
                      data-description="Vibrant tennis poster with QR code">
-                    <img src="images/posters/tennis.png" alt="Tennis Event Poster" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Tennis poster</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/tennis.png" alt="Tennis Event Poster" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Tennis poster</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Tennis Event Poster</h5>
@@ -771,11 +329,13 @@
                      data-image="images/posters/mobile.png" 
                      data-title="Health Awareness Poster" 
                      data-description="Informative poster for community health initiative">
-                    <img src="images/posters/mobile.png" alt="Health Awareness Poster" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Health Awareness Poster</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/mobile.png" alt="Health Awareness Poster" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Phone Ad Poster</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Phone Ad Poster</h5>
@@ -788,14 +348,16 @@
                      data-image="images/posters/ncnas.png" 
                      data-title="Environmental Day Poster" 
                      data-description="Eco-friendly design promoting environmental conservation">
-                    <img src="images/posters/ncnas.png" alt="Environmental Day Poster" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Nursing college poster</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/ncnas.png" alt="Environmental Day Poster" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Nursing college poster</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
-                        <h5>Nursing college poster</h5>
+                        <h5>Nursing College Poster</h5>
                         <p>Professional college poster designed for enrollment awareness using Canva</p>
                         <small class="text-muted">Nursing Poster</small>
                     </div>
@@ -820,11 +382,13 @@
                      data-image="images/posters/cv3.jpg" 
                      data-title="Executive CV Template" 
                      data-description="Modern design for senior professionals and executives">
-                    <img src="images/posters/cv3.jpg" alt="Executive CV Template" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Executive CV Template</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/cv3.jpg" alt="Executive CV Template" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Executive CV Template</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Executive CV Template</h5>
@@ -837,11 +401,13 @@
                      data-image="images/posters/cv2.jpg" 
                      data-title="Creative Professional CV" 
                      data-description="Designed for designers, artists, and creative professionals">
-                    <img src="images/posters/cv2.jpg" alt="Creative Professional CV" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Creative Professional CV</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/cv2.jpg" alt="Creative Professional CV" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Creative Professional CV</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Creative Professional CV</h5>
@@ -854,11 +420,13 @@
                      data-image="images/posters/cv1.jpg" 
                      data-title="IT Professional CV" 
                      data-description="Technical CV with skills matrix and certifications section">
-                    <img src="images/posters/cv1.jpg" alt="IT Professional CV" class="work-img">
-                    <div class="work-overlay">
-                        <h5>IT Professional CV</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/cv1.jpg" alt="IT Professional CV" class="work-img">
+                        <div class="work-overlay">
+                            <h5>IT Professional CV</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>IT Professional CV</h5>
@@ -871,11 +439,13 @@
                      data-image="images/posters/cv4.jpg" 
                      data-title="Academic CV Template" 
                      data-description="Designed for researchers, academics, and scholars">
-                    <img src="images/posters/cv4.jpg" alt="Academic CV Template" class="work-img">
-                    <div class="work-overlay">
-                        <h5>Academic CV Template</h5>
-                        <p>Click to view full size</p>
-                        <i class="fas fa-expand-alt"></i>
+                    <div class="portfolio-img-wrapper">
+                        <img src="images/posters/cv4.jpg" alt="Academic CV Template" class="work-img">
+                        <div class="work-overlay">
+                            <h5>Academic CV Template</h5>
+                            <p>Click to view full size</p>
+                            <i class="fas fa-expand-alt"></i>
+                        </div>
                     </div>
                     <div class="work-info">
                         <h5>Academic CV Template</h5>
@@ -888,7 +458,7 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="bg-light">
+    <section>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center fade-in">
@@ -947,145 +517,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offset = 80;
-                    const targetPosition = target.offsetTop - offset;
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Add stagger effect to work items
-        document.querySelectorAll('.work-grid').forEach(grid => {
-            const items = grid.querySelectorAll('.fade-in');
-            items.forEach((item, index) => {
-                item.style.transitionDelay = `${index * 0.05}s`;
-            });
-        });
-
-        // Image Lightbox functionality
-        const lightbox = document.getElementById('imageLightbox');
-        const lightboxImage = document.getElementById('lightboxImage');
-        const lightboxTitle = document.getElementById('lightboxTitle');
-        const lightboxDesc = document.getElementById('lightboxDesc');
-        const lightboxClose = document.getElementById('lightboxClose');
-        const lightboxPrev = document.getElementById('lightboxPrev');
-        const lightboxNext = document.getElementById('lightboxNext');
-
-        let currentImages = [];
-        let currentIndex = 0;
-
-        // Get all work items for lightbox
-        const workItems = document.querySelectorAll('.work-item');
-
-        workItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                const imageSrc = item.getAttribute('data-image');
-                const title = item.getAttribute('data-title');
-                const description = item.getAttribute('data-description');
-                
-                // Set current images array for navigation
-                currentImages = Array.from(workItems).map(p => ({
-                    src: p.getAttribute('data-image'),
-                    title: p.getAttribute('data-title'),
-                    desc: p.getAttribute('data-description')
-                }));
-                
-                currentIndex = index;
-                openLightbox(imageSrc, title, description);
-            });
-        });
-
-        function openLightbox(src, title, description) {
-            lightboxImage.src = src;
-            lightboxTitle.textContent = title;
-            lightboxDesc.textContent = description;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = ''; // Restore scrolling
-        }
-
-        function navigateLightbox(direction) {
-            if (currentImages.length === 0) return;
-            
-            currentIndex += direction;
-            
-            // Loop around
-            if (currentIndex < 0) {
-                currentIndex = currentImages.length - 1;
-            } else if (currentIndex >= currentImages.length) {
-                currentIndex = 0;
-            }
-            
-            const image = currentImages[currentIndex];
-            openLightbox(image.src, image.title, image.desc);
-        }
-
-        // Event listeners
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
-        lightboxNext.addEventListener('click', () => navigateLightbox(1));
-
-        // Close lightbox on ESC key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            } else if (e.key === 'ArrowLeft') {
-                navigateLightbox(-1);
-            } else if (e.key === 'ArrowRight') {
-                navigateLightbox(1);
-            }
-        });
-
-        // Close lightbox when clicking outside image
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#platforms">Platforms</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#platforms">Technologies</a></li>
                     <li class="nav-item"><a class="nav-link" href="mywork.html">My Works</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -103,8 +103,8 @@
                 </div>
                 <div class="col-md-3 col-6 fade-in">
                     <div class="stat-card">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">Platforms Managed</div>
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Technologies Managed</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6 fade-in">
@@ -117,40 +117,84 @@
         </div>
     </section>
 
-    <!-- Platforms Section -->
+    <!-- Technologies Section -->
     <section id="platforms">
         <div class="container">
             <div class="text-center mb-5 fade-in">
-                <h2 class="section-title">Educational Platforms & Systems</h2>
-                <p class="section-subtitle">Technologies I work with daily</p>
+                <h2 class="section-title">Educational Technologies I Work With</h2>
+                <p class="section-subtitle">Platforms and tools I use daily to enhance learning</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="platform-icon-wrapper">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
                         <h5>Jamf</h5>
-                        <p class="text-muted">Apple device management for education</p>
+                        <p>Apple device management for education</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="platform-icon-wrapper">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
                         <h5>Securly</h5>
-                        <p class="text-muted">Student safety monitoring platform</p>
+                        <p>Student safety monitoring platform</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon"><i class="fab fa-microsoft"></i></div>
+                        <div class="platform-icon-wrapper">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
                         <h5>Microsoft 365</h5>
-                        <p class="text-muted">Cloud administration & user management</p>
+                        <p>Cloud administration & user management</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <div class="platform-icon-wrapper">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
                         <h5>Seesaw</h5>
-                        <p class="text-muted">Digital portfolios & engagement</p>
+                        <p>Digital portfolios & engagement</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="platform-card">
+                        <div class="platform-icon-wrapper">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <h5>ClassVR</h5>
+                        <p>Virtual reality for immersive learning</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="platform-card">
+                        <div class="platform-icon-wrapper">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h5>LEGO Spike</h5>
+                        <p>Robotics and coding education</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="platform-card">
+                        <div class="platform-icon-wrapper">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h5>3D Printer</h5>
+                        <p>Design thinking & prototyping</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 fade-in">
+                    <div class="platform-card">
+                        <div class="platform-icon-wrapper">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h5>K'NEX Kit</h5>
+                        <p>Engineering & construction learning</p>
                     </div>
                 </div>
             </div>
@@ -164,9 +208,9 @@
                 <h2 class="section-title">Featured Work</h2>
                 <p class="section-subtitle">A selection of my recent projects</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4 fade-in">
-                    <div class="portfolio-item" data-image="images/posters/QDZ.png" data-title="QuickDocs Zambia Logo" data-description="Professional logo design">
+            <div class="portfolio-grid">
+                <div class="portfolio-item fade-in" data-image="images/posters/QDZ.png" data-title="QuickDocs Zambia Logo" data-description="Professional logo design">
+                    <div class="portfolio-img-wrapper">
                         <img src="images/posters/QDZ.png" alt="QuickDocs Logo" class="portfolio-img">
                         <div class="portfolio-overlay">
                             <h4>QuickDocs Zambia Logo</h4>
@@ -174,9 +218,13 @@
                             <i class="fas fa-expand-alt mt-2" style="font-size: 24px;"></i>
                         </div>
                     </div>
+                    <div class="portfolio-caption">
+                        <h5>QuickDocs Zambia Logo</h5>
+                        <p>Professional logo design featuring document and business elements</p>
+                    </div>
                 </div>
-                <div class="col-md-4 fade-in">
-                    <div class="portfolio-item" data-image="images/posters/Tennis.jpg" data-title="Tennis Tournament Poster" data-description="Sports event promotion">
+                <div class="portfolio-item fade-in" data-image="images/posters/Tennis.jpg" data-title="Tennis Tournament Poster" data-description="Sports event promotion">
+                    <div class="portfolio-img-wrapper">
                         <img src="images/posters/Tennis.jpg" alt="Tennis Poster" class="portfolio-img">
                         <div class="portfolio-overlay">
                             <h4>Tennis Tournament Poster</h4>
@@ -184,15 +232,23 @@
                             <i class="fas fa-expand-alt mt-2" style="font-size: 24px;"></i>
                         </div>
                     </div>
+                    <div class="portfolio-caption">
+                        <h5>Tennis Tournament Poster</h5>
+                        <p>Sports event promotion with modern design elements</p>
+                    </div>
                 </div>
-                <div class="col-md-4 fade-in">
-                    <div class="portfolio-item" data-image="images/posters/cv1.jpg" data-title="Professional CV Design" data-description="Modern resume template">
+                <div class="portfolio-item fade-in" data-image="images/posters/cv1.jpg" data-title="Professional CV Design" data-description="Modern resume template">
+                    <div class="portfolio-img-wrapper">
                         <img src="images/posters/cv1.jpg" alt="CV Design" class="portfolio-img">
                         <div class="portfolio-overlay">
                             <h4>Professional CV Design</h4>
                             <p>Click to view full size</p>
                             <i class="fas fa-expand-alt mt-2" style="font-size: 24px;"></i>
                         </div>
+                    </div>
+                    <div class="portfolio-caption">
+                        <h5>Professional CV Design</h5>
+                        <p>Modern resume template for IT professionals</p>
                     </div>
                 </div>
             </div>
@@ -205,7 +261,7 @@
     <!-- Business Venture -->
     <section>
         <div class="container">
-            <div class="row align-items-center g-4">
+            <div class="row align-items-center g-5">
                 <div class="col-lg-6 fade-in">
                     <h2 class="section-title">QuickDocs Zambia</h2>
                     <p class="lead mb-3" style="color: var(--primary); font-weight: 600;">Founder & CEO</p>
@@ -217,14 +273,32 @@
                     </div>
                 </div>
                 <div class="col-lg-6 fade-in">
-                    <div class="feature-card">
-                        <h4 class="mb-4">Our Services</h4>
-                        <ul class="list-unstyled">
-                            <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--secondary);"></i>Document Processing</li>
-                            <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--secondary);"></i>Business Registration</li>
-                            <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--secondary);"></i>Administrative Support</li>
-                            <li class="mb-3"><i class="fas fa-check-circle me-2" style="color: var(--secondary);"></i>Consultation Services</li>
-                        </ul>
+                    <div class="business-services">
+                        <h4>Our Services</h4>
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <span>Document Processing</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <span>Business Registration</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <span>Administrative Support</span>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <span>Consultation Services</span>
+                        </div>
                     </div>
                 </div>
             </div>
