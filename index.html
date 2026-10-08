@@ -3,18 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Moonga Hansafu - IT Teacher & Design Specialist Portfolio">
-    <title>Moonga Hansafu - Professional Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <title>Moonga Hansafu | IT Teacher &amp; Design Specialist, Lusaka</title>
+    <meta name="description" content="Moonga Hansafu is an IT teacher and design specialist in Lusaka, Zambia. Educational technology, system administration, web projects, logos, posters and CV design.">
+    <meta name="author" content="Moonga Hansafu">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="canonical" href="https://hansafumoonga.github.io/portfolio/">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Link previews (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Moonga Hansafu | IT Teacher &amp; Design Specialist">
+    <meta property="og:description" content="Educational technology, system administration, web projects and creative design from Lusaka, Zambia.">
+    <meta property="og:url" content="https://hansafumoonga.github.io/portfolio/">
+    <meta property="og:image" content="https://hansafumoonga.github.io/portfolio/images/profile.jpg">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=2">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Moonga Hansafu",
+      "jobTitle": "IT Teacher & Design Specialist",
+      "url": "https://hansafumoonga.github.io/portfolio/",
+      "image": "https://hansafumoonga.github.io/portfolio/images/profile.jpg",
+      "email": "mailto:hansafumoonga@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Lusaka", "addressCountry": "ZM" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Mulungushi University" },
+      "knowsAbout": ["Educational technology", "System administration", "Web design", "Graphic design", "Teaching ICT"],
+      "sameAs": [
+        "https://www.linkedin.com/in/moonga-hansafu-946077187",
+        "https://github.com/hansafumoonga",
+        "https://www.facebook.com/profile.php?id=61584311491572"
+      ]
+    }
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" aria-label="Main navigation">
         <div class="container">
             <a class="navbar-brand" href="#home">Moonga Hansafu</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Open menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -22,6 +59,7 @@
                     <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#platforms">Technologies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="mywork.html">My Works</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
@@ -29,17 +67,23 @@
         </div>
     </nav>
 
+    <main id="main">
     <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12 text-center hero-content">
                     <div class="profile-photo-container fade-in">
-                        <img src="images/profile.jpg" alt="Moonga Hansafu" class="profile-photo">
+                        <img src="images/profile.jpg" alt="Portrait of Moonga Hansafu" class="profile-photo" width="260" height="260">
                     </div>
                     <h1 class="fade-in">Moonga Hansafu</h1>
-                    <p class="subtitle fade-in">IT Teacher & Design Specialist</p>
+                    <p class="subtitle fade-in">IT Teacher &amp; Design Specialist</p>
                     <p class="tagline fade-in">Transforming education through technology and creating innovative digital solutions</p>
+                    <ul class="hero-chips fade-in" aria-label="Quick facts">
+                        <li><i class="fas fa-location-dot" aria-hidden="true"></i> Lusaka, Zambia</li>
+                        <li><i class="fas fa-graduation-cap" aria-hidden="true"></i> Master of IT student, UNZA</li>
+                        <li><i class="fas fa-chalkboard-user" aria-hidden="true"></i> ICT educator</li>
+                    </ul>
                     <div class="fade-in mt-4">
                         <a href="#work" class="btn btn-primary-custom me-md-3 mb-3 mb-md-0">View My Work</a>
                         <a href="#contact" class="btn btn-outline-custom">Get In Touch</a>
@@ -47,6 +91,7 @@
                 </div>
             </div>
         </div>
+        <a href="#about" class="scroll-hint" aria-label="Scroll to About"><i class="fas fa-chevron-down" aria-hidden="true"></i></a>
     </section>
 
     <!-- About Section -->
@@ -62,22 +107,22 @@
             <div class="row g-4 mt-4">
                 <div class="col-md-4 fade-in">
                     <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto"><i class="fas fa-graduation-cap"></i></div>
-                        <h4>Education</h4>
-                        <p class="text-muted">Bachelor's in Mathematics & ICT from Mulungushi University. Master's student in IT at UNZA.</p>
+                        <div class="feature-icon mx-auto"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+                        <h3 class="h4">Education</h3>
+                        <p class="text-muted">Bachelor's in Mathematics &amp; ICT from Mulungushi University. Master's student in IT at UNZA.</p>
                     </div>
                 </div>
                 <div class="col-md-4 fade-in">
                     <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto"><i class="fas fa-laptop-code"></i></div>
-                        <h4>Technical Skills</h4>
+                        <div class="feature-icon mx-auto"><i class="fas fa-laptop-code" aria-hidden="true"></i></div>
+                        <h3 class="h4">Technical Skills</h3>
                         <p class="text-muted">Expert in educational system administration, platform management, and cPanel.</p>
                     </div>
                 </div>
                 <div class="col-md-4 fade-in">
                     <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto"><i class="fas fa-palette"></i></div>
-                        <h4>Creative Design</h4>
+                        <div class="feature-icon mx-auto"><i class="fas fa-palette" aria-hidden="true"></i></div>
+                        <h3 class="h4">Creative Design</h3>
                         <p class="text-muted">Skilled in Canva, Premiere Pro, and iMovie for impactful visual content.</p>
                     </div>
                 </div>
@@ -86,30 +131,30 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section">
+    <section class="stats-section" aria-label="Highlights">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-6 fade-in">
                     <div class="stat-card">
-                        <div class="stat-number">2+</div>
+                        <div class="stat-number" data-count="2" data-suffix="+">2+</div>
                         <div class="stat-label">Years Experience</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6 fade-in">
                     <div class="stat-card">
-                        <div class="stat-number">50+</div>
+                        <div class="stat-number" data-count="50" data-suffix="+">50+</div>
                         <div class="stat-label">Projects Completed</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6 fade-in">
                     <div class="stat-card">
-                        <div class="stat-number">8</div>
+                        <div class="stat-number" data-count="8">8</div>
                         <div class="stat-label">Technologies Managed</div>
                     </div>
                 </div>
                 <div class="col-md-3 col-6 fade-in">
                     <div class="stat-card">
-                        <div class="stat-number">100%</div>
+                        <div class="stat-number" data-count="100" data-suffix="%">100%</div>
                         <div class="stat-label">Client Satisfaction</div>
                     </div>
                 </div>
@@ -127,176 +172,176 @@
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon-wrapper">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                        <h5>Jamf</h5>
+                        <div class="platform-icon-wrapper"><i class="fas fa-laptop-code" aria-hidden="true"></i></div>
+                        <h3 class="h5">Jamf</h3>
                         <p>Apple device management for education</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon-wrapper">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h5>Securly</h5>
+                        <div class="platform-icon-wrapper"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+                        <h3 class="h5">Securly</h3>
                         <p>Student safety monitoring platform</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon-wrapper">
-                            <i class="fab fa-microsoft"></i>
-                        </div>
-                        <h5>Microsoft 365</h5>
-                        <p>Cloud administration & user management</p>
+                        <div class="platform-icon-wrapper"><i class="fab fa-microsoft" aria-hidden="true"></i></div>
+                        <h3 class="h5">Microsoft 365</h3>
+                        <p>Cloud administration &amp; user management</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon-wrapper">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                        <h5>Seesaw</h5>
-                        <p>Digital portfolios & engagement</p>
+                        <div class="platform-icon-wrapper"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i></div>
+                        <h3 class="h5">Seesaw</h3>
+                        <p>Digital portfolios &amp; engagement</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon-wrapper">
-                            <i class="fas fa-vr-cardboard"></i>
-                        </div>
-                        <h5>ClassVR</h5>
+                        <div class="platform-icon-wrapper"><i class="fas fa-vr-cardboard" aria-hidden="true"></i></div>
+                        <h3 class="h5">ClassVR</h3>
                         <p>Virtual reality for immersive learning</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon-wrapper">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h5>LEGO Spike</h5>
+                        <div class="platform-icon-wrapper"><i class="fas fa-robot" aria-hidden="true"></i></div>
+                        <h3 class="h5">LEGO Spike</h3>
                         <p>Robotics and coding education</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon-wrapper">
-                            <i class="fas fa-cube"></i>
-                        </div>
-                        <h5>3D Printer</h5>
-                        <p>Design thinking & prototyping</p>
+                        <div class="platform-icon-wrapper"><i class="fas fa-cube" aria-hidden="true"></i></div>
+                        <h3 class="h5">3D Printer</h3>
+                        <p>Design thinking &amp; prototyping</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 fade-in">
                     <div class="platform-card">
-                        <div class="platform-icon-wrapper">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h5>K'NEX Kit</h5>
-                        <p>Engineering & construction learning</p>
+                        <div class="platform-icon-wrapper"><i class="fas fa-tools" aria-hidden="true"></i></div>
+                        <h3 class="h5">K'NEX Kit</h3>
+                        <p>Engineering &amp; construction learning</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web & learning projects -->
+    <section id="projects" class="bg-light">
+        <div class="container">
+            <div class="text-center mb-5 fade-in">
+                <h2 class="section-title">Web &amp; Learning Projects</h2>
+                <p class="section-subtitle">Live websites and learning games I have built</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6 fade-in">
+                    <article class="project-card">
+                        <a class="project-shot" href="https://hansafumoonga.github.io/computer_club/" target="_blank" rel="noopener" aria-label="Open Tech Explorers in a new tab">
+                            <img src="images/projects/tech-explorers.jpg" alt="Tech Explorers home screen with colourful keyboard keys and two session cards" width="960" height="600" loading="lazy">
+                        </a>
+                        <div class="project-body">
+                            <h3 class="h4">Tech Explorers</h3>
+                            <p>Keyboard, mouse and typing games for a school computer club. Runs in any browser with nothing to install, and works with Makey Makey for hands-on play. Includes a guided mouse-and-keyboard quest with printable certificates.</p>
+                            <ul class="tag-list" aria-label="Built with">
+                                <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Makey Makey</li><li>GitHub Pages</li>
+                            </ul>
+                            <a class="project-link" href="https://hansafumoonga.github.io/computer_club/" target="_blank" rel="noopener">Play it live <i class="fas fa-arrow-up-right-from-square ms-1" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <article class="project-card">
+                        <a class="project-shot" href="https://sportschaplaincyzm.org/" target="_blank" rel="noopener" aria-label="Open the Sports Chaplaincy Zambia website in a new tab">
+                            <img src="images/projects/sports-chaplaincy.jpg" alt="Sports Chaplaincy Zambia website home page with the headline Building a Nation of Sports Chaplains" width="960" height="600" loading="lazy">
+                        </a>
+                        <div class="project-body">
+                            <h3 class="h4">Sports Chaplaincy Zambia</h3>
+                            <p>A fast, mobile-friendly website for a sports ministry: about, training work, resources, newsletter and joining pages, set up so it can be found on Google and shared easily.</p>
+                            <ul class="tag-list" aria-label="Built with">
+                                <li>HTML</li><li>CSS</li><li>Bootstrap</li><li>SEO</li><li>Cloudflare</li>
+                            </ul>
+                            <a class="project-link" href="https://sportschaplaincyzm.org/" target="_blank" rel="noopener">Visit the website <i class="fas fa-arrow-up-right-from-square ms-1" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Featured Work -->
-    <section id="work" class="bg-light">
+    <section id="work">
         <div class="container">
             <div class="text-center mb-5 fade-in">
                 <h2 class="section-title">Featured Work</h2>
                 <p class="section-subtitle">A selection of my recent projects</p>
             </div>
             <div class="portfolio-grid">
-                <div class="portfolio-item fade-in" data-image="images/posters/QDZ.png" data-title="QuickDocs Zambia Logo" data-description="Professional logo design">
+                <div class="portfolio-item fade-in" data-image="images/posters/QDZ.png" tabindex="0" role="button" aria-label="View QuickDocs Zambia logo full size">
                     <div class="portfolio-img-wrapper">
-                        <img src="images/posters/QDZ.png" alt="QuickDocs Logo" class="portfolio-img">
+                        <img src="images/posters/QDZ.png" alt="QuickDocs Zambia logo" class="portfolio-img" width="500" height="500" loading="lazy">
                         <div class="portfolio-overlay">
-                            <h4>QuickDocs Zambia Logo</h4>
-                            <p>Click to view full size</p>
-                            <i class="fas fa-expand-alt mt-2" style="font-size: 24px;"></i>
+                            <i class="fas fa-expand-alt mt-2" style="font-size: 24px;" aria-hidden="true"></i>
                         </div>
-                    </div>
-                    <div class="portfolio-caption">
-                        <h5>QuickDocs Zambia Logo</h5>
-                        <p>Professional logo design featuring document and business elements</p>
                     </div>
                 </div>
-                <div class="portfolio-item fade-in" data-image="images/posters/Tennis.jpg" data-title="Tennis Tournament Poster" data-description="Sports event promotion">
+                <div class="portfolio-item fade-in" data-image="images/posters/Tennis.jpg" tabindex="0" role="button" aria-label="View tennis tournament poster full size">
                     <div class="portfolio-img-wrapper">
-                        <img src="images/posters/Tennis.jpg" alt="Tennis Poster" class="portfolio-img">
+                        <img src="images/posters/Tennis.jpg" alt="Under 18 tennis tournament poster" class="portfolio-img" width="1414" height="2000" loading="lazy">
                         <div class="portfolio-overlay">
-                            <h4>Tennis Tournament Poster</h4>
-                            <p>Click to view full size</p>
-                            <i class="fas fa-expand-alt mt-2" style="font-size: 24px;"></i>
+                            <i class="fas fa-expand-alt mt-2" style="font-size: 24px;" aria-hidden="true"></i>
                         </div>
-                    </div>
-                    <div class="portfolio-caption">
-                        <h5>Tennis Tournament Poster</h5>
-                        <p>Sports event promotion with modern design elements</p>
                     </div>
                 </div>
-                <div class="portfolio-item fade-in" data-image="images/posters/cv1.jpg" data-title="Professional CV Design" data-description="Modern resume template">
+                <div class="portfolio-item fade-in" data-image="images/posters/cv1.jpg" tabindex="0" role="button" aria-label="View ICT teacher CV design full size">
                     <div class="portfolio-img-wrapper">
-                        <img src="images/posters/cv1.jpg" alt="CV Design" class="portfolio-img">
+                        <img src="images/posters/cv1.jpg" alt="CV design for an ICT teacher" class="portfolio-img" width="1414" height="2000" loading="lazy">
                         <div class="portfolio-overlay">
-                            <h4>Professional CV Design</h4>
-                            <p>Click to view full size</p>
-                            <i class="fas fa-expand-alt mt-2" style="font-size: 24px;"></i>
+                            <i class="fas fa-expand-alt mt-2" style="font-size: 24px;" aria-hidden="true"></i>
                         </div>
-                    </div>
-                    <div class="portfolio-caption">
-                        <h5>Professional CV Design</h5>
-                        <p>Modern resume template for IT professionals</p>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-5 fade-in">
-                <a href="mywork.html" class="btn btn-primary-custom"><i class="fas fa-eye me-2"></i>View More Works</a>
+                <a href="mywork.html" class="btn btn-primary-custom"><i class="fas fa-eye me-2" aria-hidden="true"></i>View More Works</a>
             </div>
         </div>
     </section>
 
     <!-- Business Venture -->
-    <section>
+    <section class="bg-light">
         <div class="container">
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 fade-in">
                     <h2 class="section-title">QuickDocs Zambia</h2>
-                    <p class="lead mb-3" style="color: var(--primary); font-weight: 600;">Founder & CEO</p>
+                    <p class="lead mb-3" style="color: var(--primary); font-weight: 600;">Founder &amp; CEO</p>
                     <p class="text-muted mb-4">QuickDocs Zambia provides efficient document solutions and business services tailored to local needs.</p>
                     <div class="mt-4">
-                        <p class="mb-2"><strong><i class="fas fa-phone me-2" style="color: var(--primary);"></i>Phone:</strong> +260 978784785</p>
-                        <p class="mb-2"><strong><i class="fas fa-envelope me-2" style="color: var(--primary);"></i>Email:</strong> quickdocszambia@gmail.com</p>
-                        <p class="mb-2"><strong><i class="fab fa-facebook me-2" style="color: var(--primary);"></i>Facebook:</strong> QuickDocs Zambia</p>
+                        <p class="mb-2"><strong><i class="fas fa-phone me-2" style="color: var(--primary);" aria-hidden="true"></i>Phone:</strong> <a class="plain-link" href="tel:+260978784785">+260 978784785</a></p>
+                        <p class="mb-2"><strong><i class="fas fa-envelope me-2" style="color: var(--primary);" aria-hidden="true"></i>Email:</strong> <a class="plain-link" href="mailto:quickdocszambia@gmail.com">quickdocszambia@gmail.com</a></p>
+                        <p class="mb-2"><strong><i class="fab fa-facebook me-2" style="color: var(--primary);" aria-hidden="true"></i>Facebook:</strong> QuickDocs Zambia</p>
                     </div>
                 </div>
                 <div class="col-lg-6 fade-in">
                     <div class="business-services">
-                        <h4>Our Services</h4>
+                        <h3 class="h4">Our Services</h3>
                         <div class="service-item">
-                            <div class="service-icon">
-                                <i class="fas fa-file-alt"></i>
-                            </div>
+                            <div class="service-icon"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
                             <span>Document Processing</span>
                         </div>
                         <div class="service-item">
-                            <div class="service-icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
+                            <div class="service-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
                             <span>Business Registration</span>
                         </div>
                         <div class="service-item">
-                            <div class="service-icon">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
+                            <div class="service-icon"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
                             <span>Administrative Support</span>
                         </div>
                         <div class="service-item">
-                            <div class="service-icon">
-                                <i class="fas fa-comments"></i>
-                            </div>
+                            <div class="service-icon"><i class="fas fa-comments" aria-hidden="true"></i></div>
                             <span>Consultation Services</span>
                         </div>
                     </div>
@@ -316,35 +361,36 @@
                     </div>
                     <div class="contact-card">
                         <div class="contact-info">
-                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
                             <div>
-                                <h5>Email</h5>
-                                <p class="mb-0 text-muted">hansafumoonga@gmail.com</p>
+                                <h3 class="h5">Email</h3>
+                                <p class="mb-0"><a class="plain-link" href="mailto:hansafumoonga@gmail.com">hansafumoonga@gmail.com</a></p>
                             </div>
                         </div>
                         <div class="contact-info">
-                            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="contact-icon"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
                             <div>
-                                <h5>WhatsApp</h5>
-                                <p class="mb-0 text-muted">+260 978784785</p>
+                                <h3 class="h5">WhatsApp</h3>
+                                <p class="mb-0"><a class="plain-link" href="https://wa.me/260978784785" target="_blank" rel="noopener">+260 978784785</a></p>
                             </div>
                         </div>
                         <div class="contact-info">
-                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
                             <div>
-                                <h5>Location</h5>
+                                <h3 class="h5">Location</h3>
                                 <p class="mb-0 text-muted">Lusaka, Zambia</p>
                             </div>
                         </div>
                         <div class="text-center mt-4">
-                            <a href="mailto:hansafumoonga@gmail.com" class="btn btn-primary-custom me-md-3 mb-3 mb-md-0"><i class="fas fa-envelope me-2"></i>Send Email</a>
-                            <a href="https://wa.me/260978784785" class="btn btn-outline-custom" target="_blank"><i class="fab fa-whatsapp me-2"></i>WhatsApp</a>
+                            <a href="mailto:hansafumoonga@gmail.com" class="btn btn-primary-custom me-md-3 mb-3 mb-md-0"><i class="fas fa-envelope me-2" aria-hidden="true"></i>Send Email</a>
+                            <a href="https://wa.me/260978784785" class="btn btn-outline-custom" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-2" aria-hidden="true"></i>WhatsApp</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -352,33 +398,31 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="social-links mb-4">
-                        <a href="https://www.linkedin.com/in/moonga-hansafu-946077187" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61584311491572" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://wa.me/260978784785" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.linkedin.com/in/moonga-hansafu-946077187" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="https://github.com/hansafumoonga" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61584311491572" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/260978784785" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                     </div>
-                    <p class="mb-0">&copy; 2026 Moonga Hansafu. All rights reserved.</p>
+                    <p class="mb-0">&copy; <span class="js-year">2026</span> Moonga Hansafu. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
+
     <!-- Lightbox -->
-    <div class="lightbox" id="imageLightbox">
-        <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
-        <button class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
-        <button class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox" id="imageLightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close"><i class="fas fa-times" aria-hidden="true"></i></button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev" type="button" aria-label="Previous image"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext" type="button" aria-label="Next image"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
         <div class="lightbox-content">
             <img id="lightboxImage" class="lightbox-img" src="" alt="">
-            <div class="lightbox-info">
-                <div class="lightbox-title" id="lightboxTitle"></div>
-                <div class="lightbox-desc" id="lightboxDesc"></div>
-            </div>
         </div>
+        <div class="lightbox-counter" id="lightboxCounter" aria-live="polite"></div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>
