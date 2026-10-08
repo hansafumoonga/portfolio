@@ -1090,3 +1090,9 @@ section[id] { scroll-margin-top: 76px; }
     .service-grid { grid-template-columns: 1fr; }
     .project-shots img { height: 240px; }
 }
+
+/* small business / startup badge */
+.badge-startup { display: inline-block; background: rgba(5,150,105,.1); color: #047857; border: 1px solid rgba(5,150,105,.35); border-radius: 999px; padding: 3px 14px; font-size: .8rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; }
+/* tall phone screenshots in the POS card and gallery show whole, not cropped */
+.project-shots img { aspect-ratio: 9 / 20; }
+.work-img[src*="zamtill"] { object-fit: contain; background: #1f2a6b; }
