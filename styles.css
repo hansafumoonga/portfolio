@@ -1096,3 +1096,10 @@ section[id] { scroll-margin-top: 76px; }
 /* tall phone screenshots in the POS card and gallery show whole, not cropped */
 .project-shots img { aspect-ratio: 9 / 20; }
 .work-img[src*="zamtill"] { object-fit: contain; background: #1f2a6b; }
+
+/* hero: keep the profile photo clear of the fixed menu bar on every screen height */
+.hero-section { padding-top: 124px; padding-bottom: 84px; }
+.profile-photo-container { margin-top: 12px; }
+@media (max-width: 768px) {
+    .hero-section { padding-top: 108px; padding-bottom: 70px; }
+}
