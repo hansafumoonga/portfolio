@@ -4,8 +4,8 @@ Personal portfolio website of Moonga Hansafu, IT teacher and design specialist i
 Built with HTML, CSS, Bootstrap 5 and plain JavaScript, hosted on GitHub Pages. No build step.
 
 ## Pages
-- `index.html` - home: about, technologies, web and learning projects, featured work, QuickDocs Zambia, contact
-- `mywork.html` - full gallery: logos and certificates, and app screens
+- `index.html` - home: about, experience, technologies, web and app projects, QuickDocs Zambia, contact
+- `mywork.html` - gallery of app and system screens (ZamTill POS, savings group system)
 
 ## Editing
 - **Add a picture to a gallery:** copy a `work-item` block in `mywork.html`, change `data-image`, the `<img src>`, and write a short `alt` description of the picture. The image viewer (arrow keys, swipe, Esc) picks it up automatically.
